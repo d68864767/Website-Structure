@@ -1,0 +1,116 @@
+// angular-app/src/app/app.module.ts
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+// Import components for each section
+import { SoftwareComponent } from './software/software.component';
+import { ProgrammingLanguagesComponent } from './programming-languages/programming-languages.component';
+import { DevelopmentToolsComponent } from './development-tools/development-tools.component';
+import { ComputerScienceComponent } from './computer-science/computer-science.component';
+import { MobileDevelopmentComponent } from './mobile-development/mobile-development.component';
+import { WebDevelopmentComponent } from './web-development/web-development.component';
+import { SdlcComponent } from './sdlc/sdlc.component';
+import { ProgrammingParadigmsComponent } from './programming-paradigms/programming-paradigms.component';
+import { DataScienceComponent } from './data-science/data-science.component';
+import { GameDevelopmentComponent } from './game-development/game-development.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    SoftwareComponent,
+    ProgrammingLanguagesComponent,
+    DevelopmentToolsComponent,
+    ComputerScienceComponent,
+    MobileDevelopmentComponent,
+    WebDevelopmentComponent,
+    SdlcComponent,
+    ProgrammingParadigmsComponent,
+    DataScienceComponent,
+    GameDevelopmentComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+// angular-app/src/app/app-routing.module.ts
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+// Import components for routing
+import { SoftwareComponent } from './software/software.component';
+import { ProgrammingLanguagesComponent } from './programming-languages/programming-languages.component';
+import { DevelopmentToolsComponent } from './development-tools/development-tools.component';
+import { ComputerScienceComponent } from './computer-science/computer-science.component';
+import { MobileDevelopmentComponent } from './mobile-development/mobile-development.component';
+import { WebDevelopmentComponent } from './web-development/web-development.component';
+import { SdlcComponent } from './sdlc/sdlc.component';
+import { ProgrammingParadigmsComponent } from './programming-paradigms/programming-paradigms.component';
+import { DataScienceComponent } from './data-science/data-science.component';
+import { GameDevelopmentComponent } from './game-development/game-development.component';
+
+const routes: Routes = [
+  { path: 'software', component: SoftwareComponent },
+  { path: 'programming-languages', component: ProgrammingLanguagesComponent },
+  { path: 'development-tools', component: DevelopmentToolsComponent },
+  { path: 'computer-science', component: ComputerScienceComponent },
+  { path: 'mobile-development', component: MobileDevelopmentComponent },
+  { path: 'web-development', component: WebDevelopmentComponent },
+  { path: 'sdlc', component: SdlcComponent },
+  { path: 'programming-paradigms', component: ProgrammingParadigmsComponent },
+  { path: 'data-science', component: DataScienceComponent },
+  { path: 'game-development', component: GameDevelopmentComponent },
+  { path: '', redirectTo: '/software', pathMatch: 'full' }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+
+// angular-app/src/app/app.component.ts
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'Programming Education Website';
+}
+
+// angular-app/src/app/app.component.html
+<!-- This is a simplified version of the app.component.html -->
+<div>
+  <header>
+    <h1>Welcome to the Programming Education Website</h1>
+    <nav>
+      <ul>
+        <li><a routerLink="/software">Software</a></li>
+        <li><a routerLink="/programming-languages">Programming Languages</a></li>
+        <li><a routerLink="/development-tools">Development Tools</a></li>
+        <li><a routerLink="/computer-science">Computer Science Concepts</a></li>
+        <li><a routerLink="/mobile-development">Mobile Development</a></li>
+        <li><a routerLink="/web-development">Web Development</a></li>
+        <li><a routerLink="/sdlc">Software Development Life Cycle (SDLC)</a></li>
+        <li><a routerLink="/programming-paradigms">Computer Programming Paradigms</a></li>
+        <li><a routerLink="/data-science">Data Science</a></li>
+        <li><a routerLink="/game-development">Game Development</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</div>
+
+// angular-app/src/app/app.component.css
+/* Styles for app.component.css can be similar to the provided style.css, adapted for Angular */
+
+// Note: Each component (e.g., SoftwareComponent, ProgrammingLanguagesComponent, etc.) would also need corresponding .ts, .html, and .css files, which are not included here due to the complexity of the project.

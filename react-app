@@ -1,0 +1,107 @@
+// react-app/src/App.js
+
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import './App.css';
+
+// Importing components for each section
+import Software from './components/Software';
+import ProgrammingLanguages from './components/ProgrammingLanguages';
+import DevelopmentTools from './components/DevelopmentTools';
+import ComputerScience from './components/ComputerScience';
+import MobileDevelopment from './components/MobileDevelopment';
+import WebDevelopment from './components/WebDevelopment';
+import SDLC from './components/SDLC';
+import ProgrammingParadigms from './components/ProgrammingParadigms';
+import DataScience from './components/DataScience';
+import GameDevelopment from './components/GameDevelopment';
+
+function App() {
+  return (
+    <Router>
+      <div className="App">
+        <header className="App-header">
+          <h1>Welcome to the Programming Education Website</h1>
+          <nav>
+            <ul>
+              <li><Link to="/software">Software</Link></li>
+              <li><Link to="/programming-languages">Programming Languages</Link></li>
+              <li><Link to="/development-tools">Development Tools</Link></li>
+              <li><Link to="/computer-science">Computer Science Concepts</Link></li>
+              <li><Link to="/mobile-development">Mobile Development</Link></li>
+              <li><Link to="/web-development">Web Development</Link></li>
+              <li><Link to="/sdlc">Software Development Life Cycle (SDLC)</Link></li>
+              <li><Link to="/programming-paradigms">Computer Programming Paradigms</Link></li>
+              <li><Link to="/data-science">Data Science</Link></li>
+              <li><Link to="/game-development">Game Development</Link></li>
+            </ul>
+          </nav>
+        </header>
+        <Switch>
+          <Route path="/software" component={Software} />
+          <Route path="/programming-languages" component={ProgrammingLanguages} />
+          <Route path="/development-tools" component={DevelopmentTools} />
+          <Route path="/computer-science" component={ComputerScience} />
+          <Route path="/mobile-development" component={MobileDevelopment} />
+          <Route path="/web-development" component={WebDevelopment} />
+          <Route path="/sdlc" component={SDLC} />
+          <Route path="/programming-paradigms" component={ProgrammingParadigms} />
+          <Route path="/data-science" component={DataScience} />
+          <Route path="/game-development" component={GameDevelopment} />
+          <Route path="/" exact>
+            <main>
+              <section className="introduction">
+                <h2>Introduction</h2>
+                <p>Welcome to our comprehensive educational platform dedicated to all things programming. Whether you're a beginner or an experienced developer, you'll find valuable resources to enhance your skills.</p>
+              </section>
+              <section className="quick-links">
+                <h2>Quick Links</h2>
+                <p>Jump straight into learning with our quick links to the main sections:</p>
+                {/* Quick links content */}
+              </section>
+            </main>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  );
+}
+
+export default App;
+
+// react-app/src/index.js
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
+reportWebVitals();
+
+// react-app/src/App.css
+
+/* App-specific styles */
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+/* Other styles would be similar to the main style.css but adapted for React components */
